@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calculator"></i> Калькулятор BMI</h1>
+            <p class="subtitle">Индекс массы тела (Body Mass Index)</p>
+        </header>
+        
+        <main>
+            <div class="calculator-card">
+                <div class="form-section">
+                    <h2><i class="fas fa-user-edit"></i> Введите ваши данные</h2>
+                    
+                    <form id="bmiForm">
+                        <div class="form-group">
+                            <label for="weight">
+                                <i class="fas fa-weight"></i> Вес (кг)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="weight" 
+                                name="weight" 
+                                placeholder="Например: 70"
+                                min="1"
+                                max="300"
+                                step="0.1"
+                                required>
+                            <div class="input-hint">Введите вес в килограммах</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="height">
+                                <i class="fas fa-ruler-vertical"></i> Рост (м)
+                            </label>
+                            <input 
+                                type="number" 
+                                id="height" 
+                                name="height" 
+                                placeholder="Например: 1.75"
+                                min="0.5"
+                                max="2.5"
+                                step="0.01"
+                                required>
+                            <div class="input-hint">Введите рост в метрах (например: 1.75)</div>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="btn calculate-btn">
+                                <i class="fas fa-calculator"></i> Рассчитать BMI
+                            </button>
+                            <button type="button" class="btn reset-btn" id="resetBtn">
+                                <i class="fas fa-redo"></i> Сбросить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="result-section" id="resultSection" style="display: none;">
+                    <h2><i class="fas fa-chart-line"></i> Ваш результат</h2>
+                    
+                    <div class="bmi-circle" id="bmiCircle">
+                        <div class="circle-value" id="bmiValue">0</div>
+                        <div class="circle-label">BMI</div>
+                    </div>
+                    
+                    <div class="category-box" id="categoryBox">
+                        <h3 id="categoryText">Категория</h3>
+                    </div>
+                    
+                    <div class="details">
+                        <div class="detail-item">
+                            <span class="detail-label">Вес:</span>
+                            <span class="detail-value" id="detailWeight">0 кг</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Рост:</span>
+                            <span class="detail-value" id="detailHeight">0 м</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Статус:</span>
+                            <span class="detail-value" id="detailStatus">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bmi-scale">
+                        <h3><i class="fas fa-chart-bar"></i> Шкала BMI</h3>
+                        <div class="scale-bar">
+                            <div class="scale-segment underweight">
+                                <span>&lt; 18.5</span>
+                                <div>Недостаточный вес</div>
+                            </div>
+                            <div class="scale-segment normal">
+                                <span>18.5 - 24.9</span>
+                                <div>Нормальный вес</div>
+                            </div>
+                            <div class="scale-segment overweight">
+                                <span>25 - 29.9</span>
+                                <div>Избыточный вес</div>
+                            </div>
+                            <div class="scale-segment obese">
+                                <span>≥ 30</span>
+                                <div>Ожирение</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <h3><i class="fas fa-info-circle"></i> Что такое BMI?</h3>
+                <p>Индекс массы тела (BMI) — это показатель отношения веса к росту, который широко используется для классификации недостаточного, нормального, избыточного веса и ожирения.</p>
+                
+                <h4><i class="fas fa-calculator"></i> Формула расчета:</h4>
+                <div class="formula">
+                    BMI = вес (кг) ÷ рост² (м)
+                </div>
+                
+                <div class="health-tips">
+                    <h4><i class="fas fa-heartbeat"></i> Рекомендации:</h4>
+                    <ul>
+                        <li>Нормальный BMI снижает риск многих заболеваний</li>
+                        <li>Сбалансированное питание и регулярные упражнения помогают поддерживать здоровый вес</li>
+                        <li>Проконсультируйтесь с врачом для точной оценки здоровья</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2024 BMI Calculator | Создано с использованием Node.js и Express</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

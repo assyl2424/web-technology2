@@ -1,0 +1,360 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Основной контент */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Карточка калькулятора */
+.calculator-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-section h2, .result-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+/* Форма */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4b6cb7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(75, 108, 183, 0.2);
+}
+
+.input-hint {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+/* Кнопки */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.calculate-btn {
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(75, 108, 183, 0.4);
+}
+
+.reset-btn {
+    background: #e0e0e0;
+    color: #34495e;
+}
+
+.reset-btn:hover {
+    background: #d0d0d0;
+}
+
+/* Результат */
+.result-section {
+    transition: all 0.5s;
+}
+
+.bmi-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #e0e0e0;
+    transition: all 0.5s;
+}
+
+.circle-value {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.circle-label {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.category-box {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+/* Цвета категорий */
+.blue-bg {
+    background-color: #3498db;
+    color: white;
+}
+
+.green-bg {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.orange-bg {
+    background-color: #f39c12;
+    color: white;
+}
+
+.red-bg {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Детали */
+.details {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #7f8c8d;
+}
+
+.detail-value {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Шкала BMI */
+.bmi-scale h3 {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.scale-bar {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scale-segment {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.scale-segment span {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.underweight {
+    background-color: #3498db;
+}
+
+.normal {
+    background-color: #2ecc71;
+}
+
+.overweight {
+    background-color: #f39c12;
+}
+
+.obese {
+    background-color: #e74c3c;
+}
+
+/* Информационная секция */
+.info-section {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-section h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-section h4 {
+    color: #34495e;
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-section p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.formula {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 700;
+    margin: 15px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.health-tips ul {
+    padding-left: 20px;
+    color: #555;
+}
+
+.health-tips li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Подвал */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-section {
+    animation: fadeIn 0.5s ease-out;
+}
